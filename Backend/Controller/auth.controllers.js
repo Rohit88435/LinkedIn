@@ -13,7 +13,9 @@ export const signup = async (req, res) => {
     let existEmail = await User.findOne({ email });
 
     if (existEmail) {
-      return res.status(400).json({ message: "email already exist !" });
+      return res
+        .status(400)
+        .json({ message: "username & email already exist !" });
     }
 
     if (password.length < 8) {
