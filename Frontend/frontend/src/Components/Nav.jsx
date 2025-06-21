@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+
 import inimg from "../assets/in.png";
 import { IoSearch } from "react-icons/io5";
 import { IoMdHome } from "react-icons/io";
@@ -67,8 +68,12 @@ function Nav() {
       <div className="flex justify-around items-center gap-[30px] pr-[10px] lg:pr-[0] relative">
         {showPopup && (
           <div className="lg:w-[300px] w-[250px] h-[300px] bg-white shadow-lg absolute top-[68px] lg:right-[-10px] right-[10px] rounded-lg flex flex-col items-center p-[20px] pt-[10px] gap-[10px]">
-            <div className="w-[70px] h-[70px] rounded-full overflow-hidden">
-              <img src={profile} alt="" className="w-full h-full" />
+            <div className="w-[70px] h-[70px] rounded-full  cursor-pointer overflow-hidden flex justify-center items-center">
+              <img
+                src={userData.profileImage || profile}
+                alt=""
+                className=" h-full"
+              />
             </div>
             <div className="font-semibold text-gray-700 text-[18px]">
               {`${userData.firstName} ${userData.lastName}`}
@@ -109,12 +114,16 @@ function Nav() {
           <div className="font-semibold">Notification</div>
         </div>
         <div
-          className=" w-[50px] h-[50px] rounded-full cursor-pointer overflow-hidden  object-cover "
+          className="  w-[50px] h-[50px] rounded-full  cursor-pointer overflow-hidden flex justify-center items-center "
           onClick={() => {
             setShowPopup((prev) => !prev);
           }}
         >
-          <img src={profile} alt="" className="w-full h-full" />
+          <img
+            src={userData.profileImage || profile}
+            alt=""
+            className="h-full"
+          />
         </div>
       </div>
     </div>

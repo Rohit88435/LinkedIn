@@ -144,7 +144,6 @@ function EditProfile() {
 
   return (
     <div className="w-full h-[100vh] fixed top-0  z-[100] flex justify-center items-center">
-      // input for profileImage
       <input
         type="file"
         accept="image/*"
@@ -152,7 +151,7 @@ function EditProfile() {
         ref={profileImage}
         onChange={handleProfileImg}
       />
-      // input for coverImage
+
       <input
         type="file"
         accept="image/*"
@@ -160,7 +159,7 @@ function EditProfile() {
         ref={coverImage}
         onChange={handleCoverImg}
       />
-      <div className="bg-black opacity-[0.7] w-full h-full absolute"></div>
+      <div className="bg-black opacity-[0.7] w-full h-full top-0 left-0 absolute"></div>
       <div className="w-[90%] max-w-[600px] h-[600px] bg-white relative z-[200] p-[10px] rounded-md shadow-lg overflow-auto">
         <div
           className=" absolute top-[20px] right-[20px] cursor-pointer "
@@ -171,12 +170,12 @@ function EditProfile() {
           <RxCross1 className="w-[25px] h-[25px] text-gray-800 font-bold " />
         </div>
         <div
-          className="w-full h-[150px] bg-gray-500 overflow-hidden rounded-lg mt-[40px]"
+          className="w-full h-[150px] bg-gray-500 overflow-hidden object-fill rounded-lg mt-[40px]"
           onClick={() => {
             coverImage.current.click();
           }}
         >
-          <img src={frontendCoverImg} alt="" className="w-full" />
+          <img src={frontendCoverImg} alt="" className="w-full object-fill " />
           <IoCameraOutline className="absolute w-[25px] right-[20px] top-15 h-[25px] text-[#d7e0e3] cursor-pointer " />
         </div>
         <div

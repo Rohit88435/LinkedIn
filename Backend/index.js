@@ -5,6 +5,7 @@ import { authRouter } from "./Routes/auth.routes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import userRouter from "./Routes/user.routes.js";
+import postRoute from "./Routes/post.routes.js";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use(
 // middleware
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/post", postRoute);
 
 //  app listen
 app.listen(process.env.PORT || 9000, () => {
